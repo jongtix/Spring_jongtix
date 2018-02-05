@@ -1,0 +1,35 @@
+ apache-ant-1.8.0-bin.zip                       27-Jan-2012 09:51   12M  
+ apache-log4j-1.2.16.zip                        27-Jan-2012 09:51  4.4M  
+ apache-tomcat-6.0.26.exe                       27-Jan-2012 09:51  6.6M  
+ eclipse-jee-helios-win32.zip                   27-Jan-2012 09:53  206M  
+ hibernate-distribution-3.5.1-Final-dist.zip    27-Jan-2012 09:54   64M  
+ jdk-6u21-windows-i586.exe                      27-Jan-2012 09:54   76M  
+ mysql-connector-java-5.1.11-bin.jar            27-Jan-2012 09:54  715K  
+ mysql-essential-5.1.45-win32.msi               27-Jan-2012 09:55   39M  
+ spring-batch-2.1.2.RELEASE-no-dependencies.zip 27-Jan-2012 09:55  2.3M  
+ spring-framework-3.0.2.RELEASE-with-docs.zip   27-Jan-2012 09:55   45M  
+ spring-security-3.0.2.RELEASE.zip              27-Jan-2012 09:55   17M  
+--------------------------------------------------------------------------------
+commons-lang3-3.1.jar
+commons-logging.jar
+spring-aop.jar
+com.springsource.org.aopalliance-1.0.0.jar
+aspectjrt.jar
+aspectjweaver.jar
+slf4j-nop-1.5.11.jar
+slf4j-api-1.5.11.jar
+hibernate3.jar
+hibernate-jpa-2.0-api-1.0.0.Final.jar
+asm-4.0.jar : http://forge.ow2.org/project/download.php?group_id=23&file_id=17183
+commons-pool-1.2.jar
+commons-dbcp-1.2.1.jar
+--------------------
+jstl-impl-1.2.jar
+jstl-api-1.2.jar
+-------------------------
+validation-api-1.0.0.GA.jar
+hibernate-validator-4.0.2.GA.jar
+commons-fileupload-1.2.1.jar
+------------------------------
+security전부 복사
+quartz-1.8.3.jar

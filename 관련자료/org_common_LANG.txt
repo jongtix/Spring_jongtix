@@ -1,0 +1,24 @@
+org.apache.commons.lang.StringUtils, org.apache.commons.lang.math.NumberUtils 등의 commons.lang 패키지가 없다고 할 때는
+
+
+
+
+
+
+
+http://commons.apache.org/lang/download_lang.cgi 여기로 이동 후
+
+2.x 이하 버전을 받던가
+
+
+
+
+3.x 버전을 받으면
+
+
+org.apache.commons.lang3.StringUtils
+
+org.apache.commons.lang3.math.NumberUtils
+
+으로 바꿔준다.
+

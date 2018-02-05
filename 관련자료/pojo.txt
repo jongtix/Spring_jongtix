@@ -1,0 +1,299 @@
+
+
+   
+ POJO (Plain Old java Object)란?  Java  2008/10/08 00:03
+
+ http://blog.naver.com/thtlsgkrtod/40055742326 
+
+
+ 
+
+POJO (Plain Old java Object) 를 해석하면 평범 자바 오브젝트라고 한다. 
+POJO를 이해 하기 전  POJO라는 단어가 만들어진 역사적 배경을 살펴볼 필요가 잇다. POJO는 마틴 파울러가  2000년 가을에 열렸던 어느 컨퍼런스의 발표를 준비하면서 처음 만들어낸 말이다. 마틴 파울러는 EJB(Enterprise JavaBean)보다는 단순한 자바 오브젝트에 도메인 로직을 넣어 사용하는 것이 여러가지 장점이 있는데도 왜 사람들이 그 EJB가 아닌 '평범한자바 오브젝트'를 사용하기를 꺼려 하는지에 대해 의문을 가졌다. 그리고 그는 단순한 오브젝트에는 EJB와 같은 그럴듯한 이름이 없어어서 그 사용을 주저하는 것이라고 결론 내렸다. 
+  그래서 만든 단어가 POJO라는 용어인 것이다. POJO기반의 기술을 사용한다고 말하면 왠지 첨단 기술을 사용하는 앞선 개발자인 듯한 인상을 주기 때문인다.
+
+POJO기반의 프로그래밍 기술이 EJB의 강력한 대안으로 등장했고 ,POJO 기반 프레임워크 ,POJO 애플리케이션을 위한 플랫폼 등이 점점 인기를 끌게 되었고, 결국 POJO가 배제하려고 했던 EJB는 POJO기반의 기술에 밀려 이제 레거시 기술로 사라질 위기에 처했다. 그렇다면 단지 EJB를 사용하지 않으면 모두 POJO라고 할 수 있을까? 그렇지 않다. POJO프로그래밍이라는 개념은 단지 "EJB가 아닌 자바"이상의 특징을 가지고 있는 프로그래밍 모델이다. POJO기반의 개발은 생각보다 단순하지 않다.
+  POJO를 좀더 이해하려면 EJB의 장단점을 함께 이해해야 한다. 그것은 POJO 프로그래밍이 다시 EJB시대이전으로 돌아 가자는 것이 아니고 ,EJB를 넘어 그보다 더 앞으로 나아가자는 것이기 때문이다. 
+EJB를 사용하지 말고 POJO를 쓰자는 것은  EJB이전의 방식으로 돌아 가는 것을 의미한다면 또 다른 문제가 발생 할 수 밖에 없다. 여전히 복잡한 로우레벨의 API를 이용해 코드를 작성해야 하고, 많은 기술적인 문제를 애플리케이션 코드에 그대로 노출시켜 개발해야 한다면 기껏 POJO로의 복귀 덕분에 얻는 많은 장점들을 놓칠 수 밖에 없다. 
+
+  그래서 등장한 것이 POJO 기반의 프레임워크이다. POJO프레임워크는 POJO를 이용한 애플리케이션 개발이 가진 특징과 장점을 그대로 살리면서 EJB에서 제공하는 엔터프라이즈 서비스와 기술을 그대로 사용할 수 있도록 도와주느 프레임워크이다. 나아가 이는 기존의 EJB에서보다 훨씬 더 세련되고 나은 방법이다. 데표적인 프레임웤 스프링 하이버네이트~!
+
+참고로 스프링은 엔터프라이즈 서비스들을 POJO기반으로 만든 비지니스 오브젝트에서 사용할 수 있게 한다. 대표적인 선언적인 트랜잭션 서비스와 보안이다. 또한 EJB와 마찬가지로 오브젝트 컨테이너를 제공해서 인스턴스의 라이프사이클을 과리하고 필요에 따르 스레딩, 풀링 및 서비스 인젝션 등의 기능을 제공한다. 또한 OOP를 더  OOP답게 사용 할 수있게 하는 AOP기술을 적용해서 POJO개발을 더 쉽게 만든다. 
+
+POJO프로그램의 진정한 가치는 자바의 객체지향적인 특징을 살려 비지니스 로직에 충실한 개발이 가능 하도록 하는것이기도 하다. 
+
+내생각을 적자면 
+평범한 자바 객체로 프로그래밍 하기라고 부르며, 침략적인 코드를 적지 않은 것이다. 
+쉽게 말해 implement 와 extends를 사용 하지 않으며
+콤포지션과 인터페이스타입으로 프로그래밍 하는것(이건 레디 존슨)
+
+특정 클래스의 concrete class가 되면 안되고, 구현 체도 되면 안된다. 
+ 
+---------------------
+ POJO (Plain Old Java Object)  Technic / JAVA  2007/08/10 17:25
+
+ http://blog.naver.com/jiruchi/10020628587 
+
+
+ 
+
+POJO - Plain Old Java Object 
+
+즉... 평범한 Java 객체라는 뜻입니다.  
+
+즉... 개발자가 마음대로 정의 할 수 있는 객체라는 뜻입니다. 
+
+ 
+
+자세한 POJO 에 대한 자세한 설명은
+
+http://en.wikipedia.org/wiki/Plain_Old_Java_Object   
+
+ 
+
+즉...  EJB 컨테이너에 의존하는 객체처럼 복잡하지 않고 개발자가 쓰기 편한 간단한 Object를 만들어 쓰자는
+
+단순 간단 명료한 Object 개념입니다. 
+
+POJO를 접했을때는 뭐.. 그냥 Object 를 수퍼클래스로 둔 보통/평범 그 자체인 클래스 잖아... 
+
+이렇게 생각했는데..... 맞습니다.. 
+
+그냥 단순한 Java 객체라고 보면 됩니다. 
+
+너무 복잡하게 생각하면... 머리만 아플뿐 진전이 없어서.... 저는 그냥 단순하게 생각할렵니다... 
+
+ 
+
+요약하자면 POJO의 필수 요소는 
+
+   ● light-weight (possibly) 
+
+   ● flexible 
+
+   ● simple 
+
+   ● supported by separate optional components such as Hibernate or Spring 
+
+위의 요소을 갖춰야지 POJO 라고 할수 있습니다. 
+
+Spring , Hiberate , ibatis 등에서 객체를 가볍게 , 간단히 , 유연하게 만들어야 하는
+
+DTO 의 쓰임을 가진 객체를 POJO 스럽게 만들어야 되겠죠.. 
+
+ 
+
+아래는 POJO 의 예입니다..  
+
+   
+ // BaseObject 
+ public abstract class BaseObject implements Serializable {
+               
+
+       public abstract String toString(); 
+       public abstract boolean equals(Object o); 
+       public abstract int hashCode(); 
+}
+
+ 
+
+public class Student implements BaseObject {
+
+
+private static final long serialVersionUID = -4036079336491908424L;
+
+@Override 
+
+public String toString() {
+
+     //구현.. 
+
+} 
+
+@Override 
+
+public boolean equals(Object o) {
+
+
+     //구현.. 
+
+}
+
+@Override
+
+public int hashCode() {
+
+    //구현.. 
+
+}
+
+ 
+
+// .. 멤버 선언 
+
+private String name; 
+
+private int age;
+
+//.. set ,get Method 구현
+
+public void setName(String name) {
+
+      this.name = name;       
+
+}
+
+public String getName() {
+
+      return this.name; 
+
+}
+
+public void setAge(int age) {
+
+      this.age = age; 
+
+}
+
+public int getAge() {
+
+      return this.age; 
+
+}
+  
+   
+
+}
+
+보통 Object 상속 받아서 구현 하는 보통 클래스와 달리 Serializable 인터페이스를 받은 
+
+추상 클래스 BaseObject 를 상속받아서 구현 되있습니다. 
+
+굳이 이렇게 할 필요는 없지만.. 이렇게 해야 되는 이유는.. 글쎄요... 
+
+어느 분이 그러시는데.... 통일성 유지???.. 전 잘 모르겠습니다... 
+
+암튼... 최상위 부모 객체인 Object 클래스의 toString() , equals() , hashCode() 메소드를 
+
+클래스의 쓰임에 따라 Override 하여 POJO 를 만드는걸 추천합니다.  
+
+ 
+
+특히 두 객체를 비교 할때  equals() , hashCode() 를 
+
+어떻게 작성하냐 따라 객체의 비교시 결과가 틀려지므로 주의가 필요합니다.  
+
+equals() 과 hashCode() 를 override 안하면 단지 메모리 주소값만으로 비교를 수행합니다.  
+
+메모리 주소값만으로 비교 하게 된다면 같은 값의 속성을 가진 두 객체간의 비교도 false 가 되는거죠..
+
+문제는 클래스의 멤버가 추가나 수정 되면 BaseObject 에서 상속받은 메소드들을 클래스 특징에 따라 수정을 해줘야 되는데..
+
+매우 귀찮습니다... 
+
+다행히 Eclipse 에 toString() , equals() , hashCode() 작성을 자동화 시켜주는 플러그인이 있습니다.
+
+그래도 귀찮으시다면 reflection을 이용한 구현 방법도 있겟지만.. 그래도 reflection 하는데는 성능 문제가 있겠죠... 
+
+아래는 jakarta common-lang 에 있는 reflection 관련 메소드를 이용해 toString() , equals() , hashCode() 를 작성하는 예입니다. 
+
+ 
+
+   
+  import org.apache.commons.lang.builder.EqualsBuilder;
+
+ import org.apache.commons.lang.builder.HashCodeBuilder;
+
+ import org.apache.commons.lang.builder.ToStringBuilder; 
+
+ import org.apache.commons.lang.builder.ToStringStyle; 
+
+ 
+
+ public class BaseObject() {
+    public String toString() {
+       return ToStringBuilder.reflectionToString(this,ToStringStyle.MULTI_LINE_STYLE);
+
+    }
+
+    public boolean equals(Object o) {
+
+       return EqualsBuilder.reflectionEquals(this, o);
+
+    }
+
+    public int hashCode() {
+
+       return HashCodeBuilder.reflectionHashCode(this);
+
+    }
+
+ }
+  
+   
+
+메소드명 보시면 딱 아시겠지만 reflection 을 이용해 각 메소드를 구현했습니다.  
+
+클래스의 멤버를 수정해도 toString() , equals() , hashCode() 를 수정 안해도 되겠죠... 
+
+ 
+
+이제 다시 POJO 예를 보시면 Serializable 인터페이스를 구현하고 있습니다. 
+
+Serializable 인터페이스 객체가 직렬화가 제공되어야 함을 JVM에 알려주는 역활만 할뿐 
+
+상속 받은 메소드를 구현해 주어야 하는건 아닙니다. 
+
+단지 static 이고 final 인 serialVersionUID 멤버를 선언해 주고 long 타입의 값을 정해주어야 합니다.  
+
+serialVersionUID 은 해당 객체에 대한 Version 을 알려주는 역활을 합니다.  
+
+즉 클래스의 멤버나 메소드가 변경 되거나 추가 되면  serialVersionUID 의 값도 변경해 주어야 합니다. 
+
+serialVersionUID 의 값을 구하는 방법은 JDK 의 bin에 제공되는  serialver  명령어로 
+
+>  serialver 클래스명 
+
+ 
+
+해주시면 해당 클래스의 serialVersionUID 의 값을 알수 있습니다. 
+
+serialver 의 Eclipse 자동화 플러그인이 있다고 하는데... 
+
+현재 Eclipse plug-in 사이트에 가서 검색을 해보니 
+
+서버에 접근이 안되서 plug-in을 깔아보지는 못했습니다. 
+
+혹시 serialver 에 대한 Eclipse 플러그인 아시는 분은 좀 가르쳐 주세요.. 흑흑... ㅠ.ㅠ 
+
+ 
+
+이상 POJO에 대해 정리해 보았습니다. 
+
+제 생각에는 굳이 toString() , hashCode() , equals() 메소들은 객체 쓰임에 있어서 
+
+필요가 없다면 Override 할 필요 없이 Object 의 메소드들을 이용 해도 상관 없다 생각합니다.  
+
+물론 네트워크 나 파일로 직렬화 혹 역직렬화가 필요없다가 Serializable 인터페이스를 구현 하는것도 
+
+불필요 하다 생각합니다. 
+
+ 
+
+Spring 이나 ibatis 등 프레임워크에서 유연하게 쓰일수 있도록
+
+간단 명료하게 어떤 Object에 대해 추상화 할 수 있는 객체를 만들어 쓸수 있다면 그것이 POJO라 생각합니다.. 
+
+ ------------------------
+POJO의 소개
+
+POJO는 순수한 자바 클래스인 기존의 자바 오브젝트를 이용하는 것으로 일반적인 자바 클래스를 가르키는 것으로 비동기 호출을 지원
+
+하는 것을 말하는 것으로 그냥 자바오브젝트라고 생각을 하면 될것이다.  그러나 이것의 최대의 장점은 EJB처럼 특별한 프레임워크가 
+
+없기 때문에 자바의 원래 장점인 객체지향설계와 간단하다는 점이다.  여기에 추가적인 장점은 한가지 측면에만 관심을 가질 수가 
+
+있으므로 개발이 쉬워진다는 장점이 있고 데이터베이스와 애플리케이션 서버없이 테스트를 할수가 있으므로 개발도 괴장히 빠른다는 
+
+점과 특정 구현 기술에 얽매이지않기때문에 소스코드가 오염이 되지가 않아서 이식성이 좋다는 것이 장점입니다.
+

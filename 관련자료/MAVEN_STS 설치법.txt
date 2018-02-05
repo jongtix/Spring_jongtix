@@ -1,0 +1,104 @@
+
+ 1. www.google.co.kr 로 접속한다. 검색창에 STS download를 입력한다.
+ 2.http://spring.io/tools/sts 검색된 사이트로 접속해서 Spring Tool Suite(STS:이클립스와 스프링 플러그 인 통합 툴)
+ 을 다운 받는다. 되도록이면 영문 폴더가 있는 곳에 다운 받아 설치한다.
+
+ 3.STS를 더블 클릭해서 설치 한다.
+   가.Pivotal tc Server 2.9.3.RELEASE 와  Spring Roo 1.2.4.RELEASE 선택을 반드시 해제한다.
+   나.JDK 경로를 선택한다. C:\Program Files\Java\jdk1.7.0_25 경로를 선택한다.
+   다.설치하는대 몇분 걸린다.
+   라.FINISH 한다.
+
+  4. 시작-실행-Spring Tool Suite 3.4.0.RELEASE 메뉴를 실행한다. 그리고 워크스페이스 경로를 만든다.
+  STS는 이클립스와 스프링 플러그인 통합 툴이다.
+
+  5.만들어진 sts_work 워크스페이스 경로에 톰캣 코어 집 파일을 다운받아 압축을 풀고 STS 이클립스 통합툴에서
+  톰캣 홈서버를 설정한다.
+
+  6.STS 이클립스 통합툴에서 File-NEW-Maven project를 선택한다.
+     가.Artifact ID가 프로젝트 명이다. 프로젝트 명을 입력한다.
+     나.Group Id를 입력한다. package는 입력할 필요가 없다. 그룹아이디를 sample이라고 입력함.
+     다.src/main/java 는 폴더로 만들어 준다. src/main/java는 패키지와 *.java 가 들어가는 경로이다.
+     라.src/main/resource 는 패키지이하 *.xml 파일이 들어가는 경로이다.
+     마.src/test/java는 만들 필요가 없다.
+     바.webapp 경로가 *.jsp,*.js,*.css,이미지 파일이 들어가는 경로이다.
+     사.컴파일 된  클래스 경로는 target/classes이다. m2e-wtp,web-resources,test-classes는 신경쓸
+     필요가 없다.
+
+  7.mybatis 라이브러리 추가하기
+     가.구글 검색창에 mybatis maven이라고 입력하고 첫번째로 검색된
+     http://mvnrepository.com/artifact/org.mybatis/mybatis/3.0.1 로 접속한다.
+
+     나. 그러면 mybatis 그룹아이디와 artifactId,버전이 검색된다.
+     mybatis-3.2.2.jar
+     <dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis</artifactId>
+	<version>3.2.2</version>
+     </dependency>
+            
+     다. mybatis-spring-1.2.0.jar
+         
+       <dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis-spring</artifactId>
+	<version>1.2.0</version>
+     </dependency>
+
+      라.cos.jar 구글 검색창에 cos maven이라고입력하고 
+      http://mvnrepository.com/artifact/servlets.com/cos/05Nov2002
+      로 접속하면 maven
+
+       <dependency>
+	<groupId>servlets.com</groupId>
+	<artifactId>cos</artifactId>
+	<version>05Nov2002</version>
+       </dependency>
+
+       마.jstl-api-1.2.jar
+
+        <dependency>
+	  <groupId>javax.servlet.jsp.jstl</groupId>
+	  <artifactId>jstl-api</artifactId>
+	  <version>1.2</version>
+        </dependency>
+
+	바. jstl-impl-1.2.jar
+	    jstl-impl maven이라고 구글 검색창에 입력하면
+
+	<dependency>
+	<groupId>org.glassfish.web</groupId>
+	<artifactId>jstl-impl</artifactId>
+	<version>1.2</version>
+        </dependency>
+
+	 사.log4j-1.2.16.jar
+
+	 <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <scope>compile</scope>
+        </dependency>
+
+      사.org.springframework.jdbc-3.2.5.RELEASE.jar
+
+        <dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-jdbc</artifactId>
+	<version>3.2.5.RELEASE</version>
+        </dependency>
+            
+            
+      아. ibatis-2.3.4.726.jar
+
+          ibatis maven
+
+	  <dependency>
+	<groupId>org.apache.ibatis</groupId>
+	<artifactId>ibatis-sqlmap</artifactId>
+	<version>2.3.4.726</version>
+         </dependency>
+            
+            
+            
