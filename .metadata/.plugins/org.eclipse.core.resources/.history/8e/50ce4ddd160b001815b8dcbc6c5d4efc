@@ -1,0 +1,12 @@
+package sam04;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+		ApplicationContext bf = new FileSystemXmlApplicationContext("bean02.xml");
+	}
+
+}

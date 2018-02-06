@@ -1,0 +1,11 @@
+package sam04;
+
+public class Bicycle implements Vehicle {
+
+	@Override
+	public void ride(String name) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

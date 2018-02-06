@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="sam01.MessageBeanEn"/>
+<fullyQualifiedTypeName name="sam01.MessageBeanKor"/>
+<fullyQualifiedTypeName name="sam02.MessageBean"/>
+<fullyQualifiedTypeName name="sam02.MessageBeanEn"/>
+<fullyQualifiedTypeName name="org.springframework.core.io.Resource"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.BeanFactory"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.xml.XmlBeanFactory"/>
+<fullyQualifiedTypeName name="org.springframework.core.io.FileSystemResource"/>
+<fullyQualifiedTypeName name="sam03.MessageBean"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.FileSystemXmlApplicationContext"/>
+<fullyQualifiedTypeName name="sam04.Car"/>
+<fullyQualifiedTypeName name="sam04.Vehicle"/>
+</qualifiedTypeNameHistroy>

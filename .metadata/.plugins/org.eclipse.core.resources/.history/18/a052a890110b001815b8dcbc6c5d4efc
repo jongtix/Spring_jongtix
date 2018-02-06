@@ -1,0 +1,11 @@
+package sam03;
+
+public class MessageBeanKor implements MessageBean {
+
+	@Override
+	public void sayHello(String name) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,8 @@
+package sam01;
+
+public class HelloApp {
+	public static void main(String[] args) {
+		MessageBeanEn bean = new MessageBeanEn();
+		bean.sayHello("Spring");
+	}
+}
