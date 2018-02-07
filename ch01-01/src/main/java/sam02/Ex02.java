@@ -4,7 +4,7 @@ public class Ex02 {
 
 	public static void main(String[] args) {
 		MessageBean mb = new MessageBeanEn(); /* new MessageBeanKor(); */
-		mb.sayHello("Hong");
+		mb.sayHello("Hong"); // Hong, Hello~
 	}
 
 }

@@ -7,6 +7,14 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
+		<config>src/main/java/sam06/bean06.xml</config>
+		<config>src/main/resources/bean07.xml</config>
+		<config>src/main/java/sam08/bean08.xml</config>
+		<config>src/main/java/sam09/bean09.xml</config>
+		<config>src/main/java/sam10/bean10.xml</config>
+		<config>src/main/java/sam11/bean11.xml</config>
+		<config>src/main/java/sam12/bean12.xml</config>
+		<config>src/main/java/sam13/bean13.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

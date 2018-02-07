@@ -16,7 +16,7 @@ public class Ex03 {
 		 */
 
 		MessageBean mb = (MessageBean) bf.getBean("mb");
-		mb.sayHello("Spring");
+		mb.sayHello("Spring"); // Spring, 안녕~
 	}
 
 }

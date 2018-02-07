@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- id가 output인 bean이 먼저 생성된 후 mb8인 bean이 output bean을 참조하여 생성됨. -->
+	<bean id="output" class="sam08.FileOutputter">
+		<property name="filename" value="msg1.txt" />
+	</bean>
+
+	<bean id="mb8" class="sam08.MessageBeanImpl">
+		<property name="name" value="꺽정"></property>
+		<property name="greet" value="안녕~"></property>
+		<property name="outputter">
+			<ref bean="output" />
+		</property>
+		<!-- <property name="outputter" ref="output"></property> -->
+	</bean>
+
+</beans>

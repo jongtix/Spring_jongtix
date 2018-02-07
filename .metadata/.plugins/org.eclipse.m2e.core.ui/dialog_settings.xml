@@ -2,11 +2,13 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="ch02"/>
 			<item value="ch01"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="ch02"/>
 			<item value="ch01-01"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -51,6 +53,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Administrator\Documents\Spring_jongtix\ch01-01\src\main\java\sam13\service"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
