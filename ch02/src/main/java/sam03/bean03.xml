@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- target 객체 -->
+	<bean id="vh" class="sam03.VehicleImpl">
+		<constructor-arg value="거북선"></constructor-arg><!-- 생성자 -->
+		<property name="name" value="이순신" />
+	</bean>
+
+	<!-- advice 객체 -->
+	<bean id="log" class="sam03.LoggingAdvice"></bean>
+
+	<!-- proxy설정 -->
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="vh"></property>
+		<property name="interceptorNames" value="advisor"></property>
+	</bean>
+
+	<!-- advisor 객체 -->
+	<bean id="advisor"
+		class="org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor">
+		<property name="advice" ref="log"></property>
+		<property name="pointcut">
+			<bean class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+				<property name="pattern" value=".*ride()"></property>
+			</bean>
+		</property>
+	</bean>
+
+</beans>

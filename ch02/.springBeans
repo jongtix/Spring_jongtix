@@ -9,6 +9,10 @@
 	<configs>
 		<config>src/main/java/sam01/applicationContext.xml</config>
 		<config>src/main/java/sam02/bean02.xml</config>
+		<config>src/main/java/sam03/bean03.xml</config>
+		<config>src/main/java/sam04/bean04.xml</config>
+		<config>src/main/java/sam06/bean06.xml</config>
+		<config>src/main/java/sam09/bean09.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

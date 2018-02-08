@@ -15,5 +15,16 @@
 //com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam01/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam01/bean01.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam02/bean02.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam03/bean03.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam04/bean04.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam04/bean04_2.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam05/bean04.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam05/bean05.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage id\="com.springsource.sts.config.ui.editors.beans" index\="3" kind\="formPage" uri\="http\://www.springframework.org/schema/beans"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam05/bean05_2.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage id\="com.springsource.sts.config.ui.editors.beans" index\="4" kind\="formPage" uri\="http\://www.springframework.org/schema/beans"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam05/bean05_3.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam06/bean06.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam07/bean07.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam08/bean08.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/ch02/src/main/java/sam09/bean09.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 com.springsource.config.ui.prefs.tabs.dialog=always
 eclipse.preferences.version=1

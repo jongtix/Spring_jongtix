@@ -15,7 +15,7 @@ public class LoggingAdvice implements MethodInterceptor {
 		Object obj = invoke.proceed(); // 메소드 실행 -- joinPoint
 		sw.stop();
 		double total = sw.getTotalTimeMillis() / 1000;
-		System.out.println("log 종료, 전체 작업 시간: " + total);
+		System.out.println("log 종료, 전체 작업 시간: " + total + "s");
 		return obj;
 	}
 

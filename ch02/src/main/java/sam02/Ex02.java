@@ -11,7 +11,7 @@ public class Ex02 {
 		MessageBean mb = (MessageBean) ac.getBean("proxy");
 		mb.sayHello(); /* log 시작, 메소드: sayHello
 						* 홍길동님 안녕하세요.
-						* log 종료, 전체 작업 시간: 5.0
+						* log 종료, 전체 작업 시간: 5.0s
 						*/
 
 	}
