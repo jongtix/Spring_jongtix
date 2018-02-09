@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="sam09.Outputter"/>
-<fullyQualifiedTypeName name="sam09.Vehicle"/>
-<fullyQualifiedTypeName name="sam10.ProductService"/>
-<fullyQualifiedTypeName name="sam10.Product"/>
-<fullyQualifiedTypeName name="sam10.ProductDao"/>
-<fullyQualifiedTypeName name="sam11.dao.BookDao"/>
-<fullyQualifiedTypeName name="sam11.service.BookService"/>
-<fullyQualifiedTypeName name="sam11.model.Book"/>
-<fullyQualifiedTypeName name="sam12.ProductDao"/>
-<fullyQualifiedTypeName name="sam12.ProductService"/>
-<fullyQualifiedTypeName name="sam12.Product"/>
-<fullyQualifiedTypeName name="sam11.dao.BookDaoKk"/>
-<fullyQualifiedTypeName name="sam13.dao.BookDao"/>
-<fullyQualifiedTypeName name="sam13.service.BookService"/>
-<fullyQualifiedTypeName name="sam13.model.Book"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.BeanNameAware"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.BeanFactoryAware"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.InitializingBean"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.DisposableBean"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.BeanFactory"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.config.BeanPostProcessor"/>
@@ -27,7 +9,6 @@
 <fullyQualifiedTypeName name="org.aopalliance.intercept.MethodInterceptor"/>
 <fullyQualifiedTypeName name="org.springframework.util.StopWatch"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSeparatorUI"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="sam04.MessageBean"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.EnableAspectJAutoProxy"/>
@@ -40,8 +21,6 @@
 <fullyQualifiedTypeName name="sam06.ProductService"/>
 <fullyQualifiedTypeName name="sam06.Product"/>
 <fullyQualifiedTypeName name="sam08.Book"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="sam09.dao.BookDao"/>
 <fullyQualifiedTypeName name="sam09.service.BookService"/>
@@ -60,4 +39,25 @@
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Aspect"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.hibernate.validator.constraints.Email"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.AssertFalse"/>
+<fullyQualifiedTypeName name="org.hibernate.validator.constraints.NotBlank"/>
+<fullyQualifiedTypeName name="org.hibernate.validator.constraints.Length"/>
+<fullyQualifiedTypeName name="service.CustomerService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="model.Customer"/>
 </qualifiedTypeNameHistroy>
