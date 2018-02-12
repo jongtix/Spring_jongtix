@@ -50,15 +50,22 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Customer editCustomer(Customer customer) {
 		Customer c = customerMap.get(customer.getId());
-		System.out.println(customer.getName());
 		c.setId(customer.getId());
 		c.setName(customer.getName());
 		c.setAddress(customer.getAddress());
 		c.setEmail(customer.getEmail());
-		System.out.println("c.getid = " + c.getId());
 		customerMap.put(c.getId(), c);
-		System.out.println("id = " + customerMap.get(c.getId()).getId());
 		return c;
+	}
+
+	@Override
+	public void update(Customer customer) throws Exception {
+		customerMap.put(customer.getId(), customer);
+	}
+
+	@Override
+	public void delete(int id) throws Exception {
+		customerMap.remove(id);
 	}
 
 }

@@ -6,6 +6,10 @@
 </head>
 <body>
 	<h2>회원정보</h2>
+	<p>
+		<c:url value="/newCustomer.do" var="url"></c:url>
+		<a href="${url }">신규</a>
+	<p>
 	<table border="1" bgcolor="violet">
 		<tr>
 			<th>아이디</th>
@@ -28,9 +32,10 @@
 					<td>${list.name}</td>
 					<td>${list.address}</td>
 					<td>${list.email}</td>
-					<td><c:url value="/customer/${list.id}.do" var="url"></c:url> <a
-						href="${url}">상세</a>&nbsp; <c:url value="customer/${list.id}/edit.do"
-							var="url"></c:url> <a href="${url}">수정</a></td>
+					<td><c:url value="viewCustomer.do?id=${list.id}" var="url"></c:url>
+						<a href="${url}">상세</a>&nbsp; <c:url
+							value="editCustomer.do?id=${list.id}" var="url"></c:url> <a
+						href="${url}">수정</a></td>
 				</tr>
 			</c:forEach>
 		</c:if>

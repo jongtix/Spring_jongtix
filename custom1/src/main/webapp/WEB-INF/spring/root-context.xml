@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property value="/WEB-INF/views/" name="prefix"/>
+		<property value=".jsp" name="suffix"/>
+	</bean>
+	<!-- 파일 업로드 설정 -->
+ 	 <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"/>  
+	 <bean
+	class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	<property name="exceptionMappings">
+		<props>
+			<prop key="java.lang.Exception">error</prop>
+		</props>
+	</property>
+</bean> 
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource" ref="messageSource"/>
+	</bean>
+	<bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource" 
+			id="messageSource">
+		<property value="classpath:/META-INF/messages" 
+			name="basename"/>
+	</bean>
+</beans>

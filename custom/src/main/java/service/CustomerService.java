@@ -16,4 +16,8 @@ public interface CustomerService {
 
 	public Customer editCustomer(Customer customer);
 
+	public void update(Customer customer) throws Exception;
+
+	public void delete(int id) throws Exception;
+
 }
