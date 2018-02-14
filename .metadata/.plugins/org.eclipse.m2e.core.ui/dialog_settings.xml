@@ -31,8 +31,10 @@
 		<list key="ciManagementSystem">
 		</list>
 		<list key="issueManagementSystem">
+			<item value="Jira"/>
 		</list>
 		<list key="issueManagementUrl">
+			<item value="https://jira.springsource.org/browse/SPR"/>
 		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">

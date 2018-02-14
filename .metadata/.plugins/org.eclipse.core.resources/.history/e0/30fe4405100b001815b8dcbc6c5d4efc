@@ -1,7 +1,0 @@
-package sam02;
-
-public class MessageBean {
-	void sayHello(String name) {
-
-	}
-}
