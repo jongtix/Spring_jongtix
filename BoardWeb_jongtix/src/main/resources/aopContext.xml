@@ -9,6 +9,11 @@
 	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
 
 	<bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>
+	<bean id="before" class="com.springbook.biz.common.BeforeAdvice"></bean>
+	<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean>
+	<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice"></bean>
+	<bean id="after" class="com.springbook.biz.common.AfterAdvice"></bean>
+	<bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean>
 
 	<aop:config>
 		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))"
@@ -18,6 +23,28 @@
 
 		<aop:aspect ref="log">
 			<aop:before method="printLog" pointcut-ref="getPointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="before">
+			<aop:before method="beforeLog" pointcut-ref="allPointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="afterReturning">
+			<aop:after-returning method="afterLog"
+				pointcut-ref="getPointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="afterThrowing">
+			<aop:after-throwing method="exceptionLog"
+				pointcut-ref="allPointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="after">
+			<aop:after method="finallyLog" pointcut-ref="allPointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="around">
+			<aop:around method="aroundLog" pointcut-ref="allPointcut" />
 		</aop:aspect>
 
 	</aop:config>

@@ -12,9 +12,7 @@ public class BoardServiceClient {
 		 * AbstractApplicationContext container = new
 		 * GenericXmlApplicationContext("annotationContext.xml");
 		 */
-		System.out.println("오류 확인1");
 		AbstractApplicationContext container = new GenericXmlApplicationContext("aopContext.xml");
-		System.out.println("오류 확인2");
 
 		BoardService boardService = (BoardService) container.getBean("boardService");
 
