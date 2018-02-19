@@ -1,0 +1,20 @@
+CREATE TABLE users (
+    id         VARCHAR2(7) NOT NULL,
+    password   VARCHAR2(8),
+    name       VARCHAR2(20),
+    role       VARCHAR2(5)
+);
+
+INSERT INTO users VALUES (
+    'test',
+    'test1234',
+    '관리자',
+    'Admin'
+);
+
+INSERT INTO users VALUES (
+    'user',
+    'user1234',
+    '홍길동',
+    'User'
+);

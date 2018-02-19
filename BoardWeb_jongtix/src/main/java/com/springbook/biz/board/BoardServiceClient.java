@@ -12,15 +12,19 @@ public class BoardServiceClient {
 		 * AbstractApplicationContext container = new
 		 * GenericXmlApplicationContext("annotationContext.xml");
 		 */
-		AbstractApplicationContext container = new GenericXmlApplicationContext("aopContext.xml");
-
+		/*
+		 * AbstractApplicationContext container = new
+		 * GenericXmlApplicationContext("aopContext.xml");
+		 */
+		AbstractApplicationContext container = new GenericXmlApplicationContext("annotationAopContext.xml");
 		BoardService boardService = (BoardService) container.getBean("boardService");
 
 		BoardVO vo = new BoardVO();
-		/*
-		 * vo.setTitle("임시 제목"); vo.setWriter("홍길동"); vo.setContent("임시 내용1234567890");
-		 * boardService.insertBoard(vo);
-		 */
+
+		vo.setTitle("임시 제목");
+		vo.setWriter("홍길동");
+		vo.setContent("임시 내용1234567890");
+		boardService.insertBoard(vo);
 
 		System.out.println("----- 리스트 불러오기 -----");
 		List<BoardVO> boardList = boardService.getBoardList(vo);
