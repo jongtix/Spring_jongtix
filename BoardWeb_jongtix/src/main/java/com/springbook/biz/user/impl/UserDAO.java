@@ -15,8 +15,8 @@ public class UserDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
-	private final String USER_GET = "select * from userrs where id = ? and password = ?";
-	private final String USER_SET = "insert into userrs values(?, ?, ?, ?)";
+	private final String USER_GET = "select * from users where id = ? and password = ?";
+	private final String USER_SET = "insert into users values(?, ?, ?, ?)";
 
 	public void setUser(UserVO vo) {
 		try {

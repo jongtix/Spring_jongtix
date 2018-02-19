@@ -6,13 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.springbook.biz.board.impl.BoardDAO;
+import com.springbook.biz.board.impl.BoardDAOSpring;
+import com.springbook.biz.board.impl.BoardDAOSpring2;
+import com.springbook.biz.board.impl.BoardDAOSpringOracle;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	@Autowired
-	@Qualifier("boardDao")
-	private BoardDAO dao;
+	@Qualifier("boardDaoSpringOracle")
+	private BoardDAOSpringOracle dao;
 
 	@Override
 	public void insertBoard(BoardVO vo) {
