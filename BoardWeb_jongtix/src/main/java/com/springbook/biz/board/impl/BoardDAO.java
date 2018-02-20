@@ -17,11 +17,11 @@ public class BoardDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
-	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select nvl(max(seq), 0) + 1 from board), ?, ?, ?)";
-	private final String BOARD_LIST = "select * from board order by seq asc";
-	private final String BOARD_UPDATE = "update board set title = ?, content = ? where seq = ?";
-	private final String BOARD_GET = "select * from board where seq = ?";
-	private final String BOARD_DELETE = "delete board where seq = ?";
+	private final String BOARD_INSERT = "insert into boardvo(seq, title, writer, content) values((select nvl(max(seq), 0) + 1 from boardvo), ?, ?, ?)";
+	private final String BOARD_LIST = "select * from boardvo order by seq asc";
+	private final String BOARD_UPDATE = "update boardvo set title = ?, content = ? where seq = ?";
+	private final String BOARD_GET = "select * from boardvo where seq = ?";
+	private final String BOARD_DELETE = "delete boardvo where seq = ?";
 
 	public void insertBoard(BoardVO vo) {
 		try {
@@ -40,7 +40,7 @@ public class BoardDAO {
 	}
 
 	public List<BoardVO> getBoardList(BoardVO vo) {
-		List<BoardVO> list = new ArrayList();
+		List<BoardVO> list = new ArrayList<BoardVO>();
 		try {
 			conn = JDBCUtil.getConnection();
 			pstmt = conn.prepareStatement(BOARD_LIST);

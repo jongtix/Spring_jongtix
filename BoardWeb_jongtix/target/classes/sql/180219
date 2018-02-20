@@ -24,6 +24,23 @@ CREATE TABLE boardvo (
     title     VARCHAR2(200),
     writer    VARCHAR2(20),
     content   VARCHAR2(2000),
-    regdate   DATE,
-    cnt       NUMBER(5)
+    regdate   DATE DEFAULT SYSDATE,
+    cnt       NUMBER(5) DEFAULT 0
+);
+
+INSERT INTO boardvo (
+    seq,
+    title,
+    writer,
+    content
+) VALUES (
+    (
+        SELECT
+            nvl(MAX(seq),0) + 1
+        FROM
+            boardvo
+    ),
+    '임시제목',
+    '테스트',
+    '임시내용'
 );
