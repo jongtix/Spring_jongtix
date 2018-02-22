@@ -19,10 +19,14 @@ public class BoardDAO {
 	private ResultSet rs = null;
 	private final String BOARD_INSERT = "insert into boardvo(seq, title, writer, content) values((select nvl(max(seq), 0) + 1 from boardvo), ?, ?, ?)";
 	private final String BOARD_LIST = "select * from boardvo order by seq asc";
+	private final String BOARD_LIST_A = "select * from boardvo where title like '%'||?||'%' or content like '%'||?||'%' order by seq asc";
+	private final String BOARD_LIST_T = "select * from boardvo where title like '%'||?||'%' order by seq asc";
+	private final String BOARD_LIST_C = "select * from boardvo where content like '%'||?||'%' order by seq asc";
+	private final String BOARD_LIST_W = "select * from boardvo where writer like '%'||?||'%' order by seq asc";
 	private final String BOARD_UPDATE = "update boardvo set title = ?, content = ? where seq = ?";
 	private final String BOARD_GET = "select * from boardvo where seq = ?";
 	private final String BOARD_DELETE = "delete boardvo where seq = ?";
-	private final String BOARD_CNTUPDATE = "update board3 set cnt=nvl(cnt,0)+1 where seq=?";
+	private final String BOARD_CNTUPDATE = "update boardvo set cnt = nvl(cnt, 0) + 1 where seq = ?";
 
 	public void insertBoard(BoardVO vo) {
 		try {
@@ -65,6 +69,111 @@ public class BoardDAO {
 		return list;
 	}
 
+	public List<BoardVO> getBoardListAll(String condition, String keyword) {
+		List<BoardVO> list = new ArrayList<BoardVO>();
+		try {
+			conn = JDBCUtil.getConnection();
+			pstmt = conn.prepareStatement(BOARD_LIST_A);
+			pstmt.setString(1, keyword);
+			pstmt.setString(2, keyword);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardVO board = new BoardVO();
+				int i = 0;
+				board.setSeq(rs.getInt(++i));
+				board.setTitle(rs.getString(++i));
+				board.setWriter(rs.getString(++i));
+				board.setContent(rs.getString(++i));
+				board.setRegDate(rs.getDate(++i));
+				board.setCnt(rs.getInt(++i));
+				list.add(board);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			JDBCUtil.close(rs, pstmt, conn);
+		}
+		return list;
+	}
+
+	public List<BoardVO> getBoardListTitle(String condition, String keyword) {
+		List<BoardVO> list = new ArrayList<BoardVO>();
+		try {
+			conn = JDBCUtil.getConnection();
+			pstmt = conn.prepareStatement(BOARD_LIST_T);
+			pstmt.setString(1, keyword);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardVO board = new BoardVO();
+				int i = 0;
+				board.setSeq(rs.getInt(++i));
+				board.setTitle(rs.getString(++i));
+				board.setWriter(rs.getString(++i));
+				board.setContent(rs.getString(++i));
+				board.setRegDate(rs.getDate(++i));
+				board.setCnt(rs.getInt(++i));
+				list.add(board);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			JDBCUtil.close(rs, pstmt, conn);
+		}
+		return list;
+	}
+
+	public List<BoardVO> getBoardListContent(String condition, String keyword) {
+		List<BoardVO> list = new ArrayList<BoardVO>();
+		try {
+			conn = JDBCUtil.getConnection();
+			pstmt = conn.prepareStatement(BOARD_LIST_C);
+			pstmt.setString(1, keyword);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardVO board = new BoardVO();
+				int i = 0;
+				board.setSeq(rs.getInt(++i));
+				board.setTitle(rs.getString(++i));
+				board.setWriter(rs.getString(++i));
+				board.setContent(rs.getString(++i));
+				board.setRegDate(rs.getDate(++i));
+				board.setCnt(rs.getInt(++i));
+				list.add(board);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			JDBCUtil.close(rs, pstmt, conn);
+		}
+		return list;
+	}
+
+	public List<BoardVO> getBoardListWriter(String condition, String keyword) {
+		List<BoardVO> list = new ArrayList<BoardVO>();
+		try {
+			conn = JDBCUtil.getConnection();
+			pstmt = conn.prepareStatement(BOARD_LIST_W);
+			pstmt.setString(1, keyword);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardVO board = new BoardVO();
+				int i = 0;
+				board.setSeq(rs.getInt(++i));
+				board.setTitle(rs.getString(++i));
+				board.setWriter(rs.getString(++i));
+				board.setContent(rs.getString(++i));
+				board.setRegDate(rs.getDate(++i));
+				board.setCnt(rs.getInt(++i));
+				list.add(board);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			JDBCUtil.close(rs, pstmt, conn);
+		}
+		return list;
+	}
+
 	public void updateBoard(BoardVO vo) {
 		try {
 			conn = JDBCUtil.getConnection();
@@ -83,6 +192,7 @@ public class BoardDAO {
 
 	public BoardVO getBoard(int seq) {
 		BoardVO vo = new BoardVO();
+		updateCount(seq);
 		try {
 			conn = JDBCUtil.getConnection();
 			pstmt = conn.prepareStatement(BOARD_GET);

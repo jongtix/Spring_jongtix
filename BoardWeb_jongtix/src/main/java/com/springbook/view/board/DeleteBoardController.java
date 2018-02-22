@@ -6,14 +6,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import com.springbook.biz.board.impl.BoardDAO;
 
-public class DeleteBoardController implements Controller {
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
+@Controller
+public class DeleteBoardController {
+
+	/*
+	 * @Override public ModelAndView handleRequest(HttpServletRequest request,
+	 * HttpServletResponse response) {
+	 */
+	/* @RequestMapping(value = "/deleteBoard.do") */
+	public ModelAndView deleteBoard(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		String view = "";
@@ -27,7 +34,7 @@ public class DeleteBoardController implements Controller {
 				BoardDAO dao = new BoardDAO();
 				int result = dao.deleteBoard(Integer.parseInt(seq));
 				if (result > 0)
-					mav.setViewName("getBoardList.do");
+					mav.setViewName("redirect:getBoardList.do");
 				else {
 					PrintWriter out = response.getWriter();
 					out.print("<script>");
@@ -35,7 +42,6 @@ public class DeleteBoardController implements Controller {
 					out.print("history.back();");
 					out.print("</script>");
 				}
-
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
