@@ -22,6 +22,7 @@ public class BoardDAO {
 	private final String BOARD_UPDATE = "update boardvo set title = ?, content = ? where seq = ?";
 	private final String BOARD_GET = "select * from boardvo where seq = ?";
 	private final String BOARD_DELETE = "delete boardvo where seq = ?";
+	private final String BOARD_CNTUPDATE = "update board3 set cnt=nvl(cnt,0)+1 where seq=?";
 
 	public void insertBoard(BoardVO vo) {
 		try {
@@ -104,12 +105,31 @@ public class BoardDAO {
 		return vo;
 	}
 
-	public void deleteBoard(BoardVO vo) {
+	public int deleteBoard(int seq) {
+		int result = 0;
 		try {
 			conn = JDBCUtil.getConnection();
 			pstmt = conn.prepareStatement(BOARD_DELETE);
-			pstmt.setInt(1, vo.getSeq());
-			pstmt.executeUpdate();
+			pstmt.setInt(1, seq);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			JDBCUtil.close(pstmt, conn);
+		}
+		return result;
+	}
+
+	// 조회수 증가 메소드
+	public void updateCount(int seq) {
+		try {
+			conn = JDBCUtil.getConnection();
+			if (conn != null) {
+				pstmt = conn.prepareStatement(BOARD_CNTUPDATE);
+				pstmt.setInt(1, seq);
+				pstmt.executeUpdate();
+			} else
+				System.out.println("connection is null");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		} finally {

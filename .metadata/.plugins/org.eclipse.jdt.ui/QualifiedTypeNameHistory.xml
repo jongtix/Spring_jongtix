@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="polymorphism.AppleSpeaker"/>
 <fullyQualifiedTypeName name="javax.inject.Qualifier"/>
@@ -22,7 +21,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.apache.tomcat.dbcp.dbcp2.BasicDataSource"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="com.springbook.biz.common.JDBCUtil"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.BAD_INV_ORDER"/>
 <fullyQualifiedTypeName name="com.springbook.biz.user.impl.UserDAO"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.springbook.biz.board.impl.BoardDAOSpring2"/>
 <fullyQualifiedTypeName name="com.springbook.biz.board.impl.BoardDAOSpringOracle"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.springbook.biz.common.JDBCUtil"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>
