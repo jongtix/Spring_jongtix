@@ -1,23 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam02{MessageBean.java[MessageBean" modifiers="513" timestamp="1517902407060"/>
-<typeInfo handle="=ch01-01/C:\/Program Files\/Java\/jre1.8.0_161\/lib\/ext\/ojdbc6.jar&lt;oracle.jdbc.driver(Message.class[Message" modifiers="1537" timestamp="1515728437306"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam04{Vehicle.java[Vehicle" modifiers="513" timestamp="1517905017213"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam05{MessageBean.java[MessageBean" modifiers="513" timestamp="1517965922891"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam03{MessageBean.java[MessageBean" modifiers="513" timestamp="1517903042363"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam06{MessageBean.java[MessageBean" modifiers="513" timestamp="1517967024131"/>
-<typeInfo handle="=ch01-01/C:\/Program Files\/Java\/jre1.8.0_161\/lib\/ext\/ojdbc6.jar&lt;oracle.net.ns(Message.class[Message" modifiers="1537" timestamp="1515728437306"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam07{Vehicle.java[Vehicle" modifiers="513" timestamp="1517967813570"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam08{MessageBean.java[MessageBean" modifiers="513" timestamp="1517969292350"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam08{Outputter.java[Outputter" modifiers="513" timestamp="1517969572965"/>
-<typeInfo handle="=ch01-01/C:\/Program Files\/Java\/jre1.8.0_161\/lib\/rt.jar&lt;com.sun.org.apache.xalan.internal.xsltc.runtime.output(OutputBuffer.class[OutputBuffer" modifiers="1536" timestamp="1516319033081"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam09{Vehicle.java[Vehicle" modifiers="513" timestamp="1517970817692"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam10{ProductDao.java[ProductDao" modifiers="513" timestamp="1517973452235"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam10{ProductService.java[ProductService" modifiers="513" timestamp="1517973624914"/>
-<typeInfo handle="=ch01-01/C:\/Program Files\/Java\/jre1.8.0_161\/lib\/jfr.jar&lt;oracle.jrockit.jfr(ProducerDescriptor.class[ProducerDescriptor" modifiers="1050113" timestamp="1516319031991"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam12{ProductService.java[ProductService" modifiers="513" timestamp="1517980309419"/>
-<typeInfo handle="=ch01-01/src\/main\/java&lt;sam12{ProductDao.java[ProductDao" modifiers="513" timestamp="1517981349768"/>
-<typeInfo handle="=ch02/src\/main\/java&lt;sam04{MessageBean.java[MessageBean" modifiers="513" timestamp="1518054239130"/>
-<typeInfo handle="=BoardWeb_jongtix/src\/main\/java&lt;com.springbook.biz.user{UserService.java[UserService" modifiers="513" timestamp="1518999231378"/>
-<typeInfo handle="=BoardWeb_jongtix/C:\/Users\/Administrator\/.m2\/repository\/org\/springframework\/spring-jdbc\/4.2.4.RELEASE\/spring-jdbc-4.2.4.RELEASE.jar&lt;org.springframework.jdbc.core(RowMapper.class[RowMapper" modifiers="1537" timestamp="1519020367109"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>
