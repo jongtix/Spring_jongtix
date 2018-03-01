@@ -14,8 +14,65 @@ import org.springframework.web.servlet.ModelAndView;
 import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.board.impl.BoardDAO;
 
+/*
+ * Controller 클래스의 메소드들을 하나로 통합한 후
+ * Component 어노테이션을 주석처리하여 원래의 POJO 클래스로 변환처리함
+ * */
 // @Controller
 public class BoardController_backup {
+
+	@RequestMapping("/insertBoard.do")
+	public ModelAndView insertBoard(HttpServletRequest request) {
+		System.out.println("글 등록 처리");
+
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		ModelAndView mav = new ModelAndView();
+		if (id == null || "".equals(id)) {
+			mav.setViewName("redirect:login.do");
+		} else {
+			mav.setViewName("insertBoard.jsp");
+		}
+		return mav;
+	}
+
+	@RequestMapping(value = "/insertBoardProc.do")
+	public ModelAndView insertBoardProc(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		ModelAndView mav = new ModelAndView();
+		String view = "";
+		if (id == null | "".equals(id))
+			mav.setViewName("login.do");
+		else {
+			try {
+				System.out.println("글 등록 처리");
+				// 1. 파라미터 받기
+				request.setCharacterEncoding("utf-8");
+				String title = request.getParameter("title");
+				String content = request.getParameter("content");
+				String writer = request.getParameter("writer");
+
+				// 2.DB연동 처리
+				BoardVO vo = new BoardVO();
+				vo.setTitle(title);
+				vo.setContent(content);
+				vo.setWriter(writer);
+
+				BoardDAO dao = new BoardDAO();
+				dao.insertBoard(vo);
+
+				// 3. 화면이동
+				mav.setViewName("redirect:getBoardList.do");
+
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return mav;
+	}
 
 	@RequestMapping(value = "/deleteBoard.do")
 	public ModelAndView deleteBoard(HttpServletRequest request, HttpServletResponse response) {
@@ -79,56 +136,6 @@ public class BoardController_backup {
 
 			mav.addObject("boardList", list);
 			mav.setViewName("getBoardList");
-		}
-		return mav;
-	}
-
-	@RequestMapping("/insertBoard.do")
-	public ModelAndView insertBoard(HttpServletRequest request) {
-		System.out.println("글 등록 처리");
-		HttpSession session = request.getSession();
-		String id = (String) session.getAttribute("id");
-		ModelAndView mav = new ModelAndView();
-		if (id == null | "".equals(id)) {
-			mav.setViewName("login.do");
-		} else {
-			mav.setViewName("insertBoard");
-		}
-		return mav;
-	}
-
-	@RequestMapping(value = "/insertBoardProc.do")
-	public ModelAndView insertBoardProc(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String id = (String) session.getAttribute("id");
-		ModelAndView mav = new ModelAndView();
-		String view = "";
-		if (id == null | "".equals(id))
-			mav.setViewName("login.do");
-		else {
-			try {
-				System.out.println("글 등록 처리");
-				// 1. 파라미터 받기
-				request.setCharacterEncoding("utf-8");
-				String title = request.getParameter("title");
-				String content = request.getParameter("content");
-				String writer = request.getParameter("writer");
-
-				// 2.DB연동 처리
-				BoardVO vo = new BoardVO();
-				vo.setTitle(title);
-				vo.setContent(content);
-				vo.setWriter(writer);
-
-				BoardDAO dao = new BoardDAO();
-				dao.insertBoard(vo);
-
-				// 3. 화면이동
-				mav.setViewName("redirect:getBoardList.do");
-
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
 		}
 		return mav;
 	}

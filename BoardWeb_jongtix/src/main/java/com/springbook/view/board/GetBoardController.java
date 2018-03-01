@@ -11,14 +11,14 @@ import org.springframework.web.servlet.ModelAndView;
 import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.board.impl.BoardDAO;
 
-@Controller
+// @Controller
 public class GetBoardController {
 
 	/*
 	 * @Override public ModelAndView handleRequest(HttpServletRequest request,
 	 * HttpServletResponse response) {
 	 */
-	/* @RequestMapping(value = "/getBoard.do") */
+	@RequestMapping(value = "/getBoard.do")
 	public ModelAndView getBoard(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		System.out.println("글 상세 처리");

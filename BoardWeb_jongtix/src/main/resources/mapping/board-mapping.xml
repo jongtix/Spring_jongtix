@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO">
+	<resultMap type="board" id="boardResult">
+		<id property="seq" column="SEQ" />
+		<result property="title" column="TITLE" />
+		<result property="writer" column="WRITER" />
+		<result property="files" column="FILES" />
+		<result property="content" column="CONTENT" />
+		<result property="regDate" column="REGDATE" />
+		<result property="cnt" column="CNT" />
+	</resultMap>
+
+	<select id="getBoardList_T" resultMap="boardResult">
+		select * from boardvo
+		where
+		title like '%'||#{searchKeyword}||'%' order by seq desc
+	</select>
+
+	<select id="getBoardList_C" resultMap="boardResult">
+		select * from boardvo
+		where
+		content like '%'||#{searchKeyword}||'%' order by seq desc
+	</select>
+
+	<select id="getBoardList_A" resultMap="boardResult">
+		select * from boardvo
+		where
+		title like '%'||#{searchKeyword}||'%'
+		or content like
+		'%'||#{searchKeyword}||'%' order by seq desc
+	</select>
+
+	<!-- 새글 등록 -->
+	<insert id="insertBoard" parameterType="board">
+		insert into
+		boardvo(seq,title,writer,content,files)
+		values((select
+		nvl(max(seq),0)+1
+		from boardvo),
+		#{title},#{writer},#{content},#{files})
+	</insert>
+
+	<!-- 상세 조회 -->
+	<select id="selectOne" parameterType="int" resultType="board">
+		select *
+		from boardvo where seq=#{seq}
+	</select>
+
+	<!-- update 처리 -->
+	<update id="updateBoard" parameterType="board">
+		update boardvo
+		set
+		writer=#{writer},title=#{title},content=#{content},files=#{files}
+		where seq=#{seq}
+	</update>
+
+	<delete id="deleteBoard" parameterType="int">
+		delete from boardvo where
+		seq=#{seq}
+	</delete>
+
+	<update id="updateCount" parameterType="int">
+		update boardvo set cnt =
+		nvl(cnt,0)+1 where seq=#{seq}
+	</update>
+</mapper>

@@ -50,10 +50,10 @@ public class BoardDAOSpringOracle {
 		return board;
 	}
 
-	public int deleteBoard(BoardVO vo) {
+	public int deleteBoard(int seq) {
 		int result = 0;
 		System.out.println("=> Spring deleteBoard() 기능 처리");
-		result = jdbcTemplate.update(BOARD_DELETE, vo.getSeq());
+		result = jdbcTemplate.update(BOARD_DELETE, seq);
 		return result;
 	}
 

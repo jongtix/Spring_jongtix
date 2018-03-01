@@ -28,6 +28,10 @@ public class LoginController /* implements Controller */ {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 
+		if (id == null || "".equals(id)) {
+			throw new IllegalArgumentException("아이디는 반드시 입력해야합니다.");
+		}
+
 		// 2.dB처리
 		UserVO user = new UserVO();
 		user.setId(id);

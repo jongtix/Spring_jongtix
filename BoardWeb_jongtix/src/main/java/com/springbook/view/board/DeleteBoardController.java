@@ -12,14 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.springbook.biz.board.impl.BoardDAO;
 
-@Controller
+// @Controller
 public class DeleteBoardController {
 
 	/*
 	 * @Override public ModelAndView handleRequest(HttpServletRequest request,
 	 * HttpServletResponse response) {
 	 */
-	/* @RequestMapping(value = "/deleteBoard.do") */
+	@RequestMapping(value = "/deleteBoard.do")
 	public ModelAndView deleteBoard(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");

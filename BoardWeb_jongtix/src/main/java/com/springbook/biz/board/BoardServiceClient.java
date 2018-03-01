@@ -48,7 +48,7 @@ public class BoardServiceClient {
 
 		System.out.println(vo.toString());
 
-		boardService.deleteBoard(vo);
+		int result = boardService.deleteBoard(seq);
 
 		System.out.println("----- 삭제 후 리스트 불러오기 -----");
 		boardList = boardService.getBoardList(vo);
