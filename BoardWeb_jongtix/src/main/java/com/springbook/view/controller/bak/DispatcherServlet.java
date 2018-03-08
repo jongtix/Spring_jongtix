@@ -25,6 +25,7 @@ public class DispatcherServlet extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
+		System.out.println("1");
 		handerMapping = new HandleMapping();
 		viewResolver = new ViewResolver();
 		viewResolver.setPrefix("./");
@@ -62,6 +63,7 @@ public class DispatcherServlet extends HttpServlet {
 			view = viewName;
 		}
 		// 5. 이동
+		System.out.println(view);
 		response.sendRedirect(view);
 
 		/*

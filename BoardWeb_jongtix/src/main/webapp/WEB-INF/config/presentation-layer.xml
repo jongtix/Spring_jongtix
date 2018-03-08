@@ -8,21 +8,29 @@
 
 	<!-- Annotation방식으로 전환하기 위해 주석처리 -->
 	<!-- HandlerMapping 등록 -->
-	<!-- <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
-		<property name="mappings"> <props> <prop key="/login.do">login</prop> <prop 
-		key="/getBoardList.do">getBoardList</prop> <prop key="/getBoard.do">getBoard</prop> 
-		<prop key="/insertBoard.do">insertBorad</prop> <prop key="/insertBoardProc.do">insertBoardPro</prop> 
-		<prop key="/updateBoard.do">updateBoard</prop> <prop key="/deleteBoard.do">deleteBoard</prop> 
-		<prop key="/logout.do">logout</prop> </props> </property> </bean> -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/login.do">login</prop>
+				<prop key="/getBoardList.do">getBoardList</prop>
+				<prop key="/getBoard.do">getBoard</prop>
+				<prop key="/insertBoard.do">insertBorad</prop>
+				<prop key="/insertBoardProc.do">insertBoardPro</prop>
+				<prop key="/updateBoard.do">updateBoard</prop>
+				<prop key="/deleteBoard.do">deleteBoard</prop>
+				<prop key="/logout.do">logout</prop>
+			</props>
+		</property>
+	</bean>
 	<!-- Controller 등록 -->
-	<!-- <bean id="login" class="com.springbook.view.user.LoginController"></bean> 
-		<bean id="getBoardList" class="com.springbook.view.board.GetBoardListController"></bean> 
-		<bean id="getBoard" class="com.springbook.view.board.GetBoardController"></bean> 
-		<bean id="insertBorad" class="com.springbook.view.board.InsertBoardController"></bean> 
-		<bean id="insertBoardPro" class="com.springbook.view.board.InsertBoardProcController"></bean> 
-		<bean id="updateBoard" class="com.springbook.view.board.UpdateBoardController"></bean> 
-		<bean id="deleteBoard" class="com.springbook.view.board.DeleteBoardController"></bean> 
-		<bean id="logout" class="com.springbook.view.board.LogoutController"></bean> -->
+	<bean id="login" class="com.springbook.view.user.LoginController"></bean>
+	<bean id="getBoardList" class="com.springbook.view.board.GetBoardListController"></bean>
+	<bean id="getBoard" class="com.springbook.view.board.GetBoardController"></bean>
+	<bean id="insertBorad" class="com.springbook.view.board.InsertBoardController"></bean>
+	<bean id="insertBoardPro" class="com.springbook.view.board.InsertBoardProcController"></bean>
+	<bean id="updateBoard" class="com.springbook.view.board.UpdateBoardController"></bean>
+	<bean id="deleteBoard" class="com.springbook.view.board.DeleteBoardController"></bean>
+	<bean id="logout" class="com.springbook.view.board.LogoutController"></bean>
 
 	<!-- annotation 방식으로 전환하기 위해서 context 네임스페이스 추가 -->
 	<context:component-scan base-package="com.springbook.view"></context:component-scan>

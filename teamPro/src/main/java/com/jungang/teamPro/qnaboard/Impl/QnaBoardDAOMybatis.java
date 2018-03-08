@@ -1,10 +1,10 @@
 package com.jungang.teamPro.qnaboard.Impl;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class QnaBoardDAOMybatis extends SqlSessionDaoSupport {
 	}
 
 	// Q&A 게시판 글 목록
-	public List<QnaBoard> selectQnaBoardList(int startRow, int endRow) {
+	public List<QnaBoard> selectQnaBoardList(@Param("startRow") int startRow, @Param("endRow") int endRow) {
 		Map<String, Integer> rows = new HashMap<String, Integer>();
 		rows.put("startRow", startRow);
 		rows.put("endRow", endRow);

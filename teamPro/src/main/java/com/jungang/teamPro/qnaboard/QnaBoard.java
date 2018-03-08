@@ -1,6 +1,6 @@
 package com.jungang.teamPro.qnaboard;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

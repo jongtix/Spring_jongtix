@@ -21,8 +21,8 @@ public class QnaBoardDAO {
 	private final String QNABOARD_REUPDATE = "update pj_QnAboard set re_step = re_step + 1 where ref = ? and re_step > ?";
 	private final String QNABOARD_INSERT = "insert into pj_QnAboard(num, flag, writer, subject, content, email, readcount, password, ref, re_step, re_level, ip, reg_date) "
 			+ "values(?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, sysdate)";
-	private final String QNABOARD_TOTAL = "select count(*) from pj_QnAboard where flag like '1%' and del != 'Y'";
-	private final String FAQBOARD_TOTAL = "select count(*) from pj_QnAboard where (flag like '11' and del != 'Y') or (flag like '1%' and readcount > 20 and del != 'Y')";
+	private final String QNABOARD_TOTAL = "select count(*) from pj_QnAboard where flag like '1%'";
+	private final String FAQBOARD_TOTAL = "select count(*) from pj_QnAboard where (flag like '11') or (flag like '1%' and readcount > 20)";
 	private final String QNABOARD_LIST = "select * from (select rownum rn, a.* from (select * from pj_QnAboard where flag like '1%' order by ref desc, re_step) a) where rn between ? and ?";
 	private final String FAQBOARD_LIST = "select * from (select rownum rn, a.* from (select * from pj_QnAboard where (flag like '11') or (flag like '1%' and readcount > 20) order by ref desc, re_step) a) where rn between ? and ?";
 	private final String QNABOARD_READCNT = "update pj_QnAboard set readcount = nvl(readcount, 0) + 1 where num = ?";

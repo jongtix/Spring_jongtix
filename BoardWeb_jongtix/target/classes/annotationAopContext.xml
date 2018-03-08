@@ -59,4 +59,13 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:sql-map-config.xml"></property>
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSession"></constructor-arg>
+	</bean>
+
 </beans>

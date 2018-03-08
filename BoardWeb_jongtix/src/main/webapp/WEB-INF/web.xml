@@ -3,15 +3,9 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-	<servlet>
-		<servlet-name>hello</servlet-name>
-		<servlet-class>hello.HelloServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>hello</servlet-name>
-		<url-pattern>/hello.do</url-pattern>
-	</servlet-mapping>
+	<!-- <servlet> <servlet-name>hello</servlet-name> <servlet-class>hello.HelloServlet</servlet-class> 
+		<load-on-startup>1</load-on-startup> </servlet> <servlet-mapping> <servlet-name>hello</servlet-name> 
+		<url-pattern>/hello.do</url-pattern> </servlet-mapping> -->
 
 	<!-- 한글 처리 필터 -->
 	<filter>
@@ -28,8 +22,10 @@
 	</filter-mapping>
 
 	<!-- 서블릿 매핑 자동 생성 -->
+	<!-- The front controller of this Spring Web application, responsible for 
+		handling all application requests -->
 	<servlet>
-		<servlet-name>action</servlet-name>
+		<servlet-name>springDispatcherServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -37,8 +33,11 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+
+	<!-- Map all requests to the DispatcherServlet for handling -->
 	<servlet-mapping>
-		<servlet-name>action</servlet-name>
+		<servlet-name>springDispatcherServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+
 </web-app>
