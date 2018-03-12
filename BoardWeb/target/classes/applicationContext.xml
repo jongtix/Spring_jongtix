@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- bean설정파일에 bean추가 
+	TV tv = new SamsaungTV();
+-->	
+<bean id="tv" class="polymorphism.SamsungTV" 
+              p:speaker-ref="sony" p:price="2700000" 
+          init-method="initMethod" destroy-method="destroyMethod" 
+                lazy-init="true" scope="singleton" >
+<!--        <constructor-arg index="1" value="2700000"></constructor-arg>            
+       <constructor-arg index="0" ref="sony"></constructor-arg>           
+       <constructor-arg index="0" ref="apple"></constructor-arg>  -->
+       <!-- setter인젝션 --> 
+     <!--   <property name="speaker" ref="apple"></property> 
+       <property name="price" value="2700000"></property>   -->
+       <!-- namespace p 사용 -->
+</bean>
+<bean id="sony" class="polymorphism.SonySpeaker"></bean>  
+<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+<!-- List타입 bean -->
+<bean id="collectionBean" class="ioc.injection.CollectionBean">
+	<property name="address">
+		<list>
+			<value>서울시 강남구 역삼동</value>
+			<value>서울시 성동구 행당동</value>
+		</list>
+	</property>
+</bean>
+<!-- Set타입 bean -->
+<bean id="setBean" class="ioc.injection.SetBean">
+	<property name="address">
+		<set value-type="java.lang.String">
+			<value>서울시 강남구 역삼동</value>
+			<value>서울시 성동구 행당동</value>
+			<value>서울시 성동구 성수동</value>	
+		</set>
+	</property>
+</bean>
+<!-- Map타입 bean -->
+<bean id="mapBean" class="ioc.injection.MapBean">
+	<property name="address">
+		<map>
+			<entry>
+				<key><value>고길동</value></key>
+				<value>서울시 강남구 역삼동</value>
+			</entry>
+			<entry>
+				<key><value>마이콜</value></key>
+				<value>서울시 강서구 화곡동</value>
+			</entry>		
+		</map>
+	</property>
+</bean>
+
+<!-- properties타입 bean -->
+<bean id="propertyBean" class="ioc.injection.PropertyBean">
+	<property name="address">
+		<props>
+			<prop key="고길동">서울시 강남구 역삼동</prop>
+			<prop key="마이콜">서울시 강서구 화곡동</prop>
+		</props>
+	</property>
+</bean>              
+</beans>
